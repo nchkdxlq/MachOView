@@ -98,7 +98,7 @@ using namespace std;
 //-----------------------------------------------------------------------------
 - (NSString *)findSymbolAtRVA:(uint32_t)rva
 {
-  NSParameterAssert([self is64bit] == NO);
+//  NSParameterAssert([self is64bit] == NO);
   NSString * symbolName = [symbolNames objectForKey:[NSNumber numberWithUnsignedLong:rva]];
   return (symbolName != nil ? symbolName : [NSString stringWithFormat:@"0x%X",rva]);
 }
@@ -155,7 +155,7 @@ using namespace std;
 //-----------------------------------------------------------------------------
 - (uint32_t)fileOffsetToRVA: (uint32_t)offset
 {
-  NSParameterAssert([self is64bit] == NO);
+//  NSParameterAssert([self is64bit] == NO);
   
   SegmentInfoMap::const_iterator segIter = segmentInfo.upper_bound(offset);
   if (segIter == segmentInfo.begin())
